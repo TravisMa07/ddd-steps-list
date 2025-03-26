@@ -12,22 +12,18 @@
       margin: 0;
       padding: 0;
     }
-    #demo {
-      margin: var(--ddd-spacing-2);
-    }
     ddd-steps-list {
-      margin: var(--ddd-spacing-2);
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
+      display: block;
+      margin: 16px;
+      padding: 16px;
+      
     }
-    ddd-steps-list:hover {
-      box-shadow: var(--ddd-boxShadow-sm);
+    ddd-steps-list-item {
+      display: block;
+      padding: 16px;
+      margin: 16px;
     }
-    #example {
-      --ddd-steps-list-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
-    }
+    
   </style>
   <title>ddd-steps-list</title>
 </head>
@@ -35,22 +31,23 @@
   <h1>TEST TEST TEST</h1>
 
   <ddd-steps-list ddd-primary="5">
-    <ddd-steps-list-item title="Choose your enrollment period">
-        <p>You will need to complete this before the Fall 2025 semester...</p>
+    <ddd-steps-list-item title="Step 1">
+        <p>contents...</p>
       <ul>
           <li>Thing 1</li>
       </ul>
     </ddd-steps-list-item>
-    <ddd-steps-list-item title="Choose your enrollment period">
-        <p>You will need to complete this before the Fall 2025 semester...</p>
+    <ddd-steps-list-item title="Step 2">
+        <p>contents...</p>
       <ul>
-          <li>Thing 1</li>
+          <li>Thing 2</li>
       </ul>
     </ddd-steps-list-item>
-    <ddd-steps-list-item title="Choose your enrollment period">
-        <p>You will need to complete this before the Fall 2025 semester...</p>
+    <h2>INVALID CHILD TESTSSS</h2>
+    <ddd-steps-list-item title="Step 3">
+        <p>contents...</p>
       <ul>
-          <li>Thing 1</li>
+          <li>Thing 3</li>
       </ul>
     </ddd-steps-list-item>
   </ddd-steps-list>

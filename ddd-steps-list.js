@@ -63,6 +63,23 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
 
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.ValidateChildren();
+  }
+
+  ValidateChildren(){
+    const childItem = Array.from(this.children);
+    childItem.forEach((item) => {
+      if (item.tagName.toLowerCase() !== "ddd-steps-list-item") {
+        console.error("Invalid child element. Only ddd-steps-list-item elements are allowed.");
+        this.removeChild(item);
+      }
+    });
+  }
+
+
   // Lit render the HTML
   render() {
     return html`
