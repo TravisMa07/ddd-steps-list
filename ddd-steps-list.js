@@ -67,6 +67,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   connectedCallback() {
     super.connectedCallback();
     this.ValidateChildren();
+    this.orderSteps();
   }
 
   ValidateChildren(){
@@ -76,6 +77,15 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
         console.error("Invalid child element. Only ddd-steps-list-item elements are allowed.");
         this.removeChild(item);
       }
+    });
+  }
+
+  orderSteps() {
+    const stepCount = Array.from(this.children).filter(
+      (item) => item.tagName.toLowerCase() === "ddd-steps-list-item"
+    );
+    stepCount.forEach((item, index) => {
+      item.step = index + 1;
     });
   }
 
@@ -89,13 +99,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
 </div>`;
   }
 
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
-  }
+ 
 }
 
 globalThis.customElements.define(DddStepsList.tag, DddStepsList);
