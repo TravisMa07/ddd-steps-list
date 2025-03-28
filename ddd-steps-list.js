@@ -85,8 +85,9 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
       (item) => item.tagName.toLowerCase() === "ddd-steps-list-item"
     );
     stepCount.forEach((item, index) => {
-      item.step = index + 1;
-    });
+        item.setAttribute("step", index + 1);
+        console.log(`Step: ${item}: ${index + 1}`); //test to ensure the steps are ordered
+      });
   }
 
 
