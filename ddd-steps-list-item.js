@@ -7,12 +7,12 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 /**
- * `ddd-steps-list-items`
+ * `ddd-steps-list-item`
  * 
  * @demo index.html
  * @element ddd-steps-list-item
  */
-export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
+export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
     return "ddd-steps-list-item";
@@ -28,9 +28,7 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
     };
     this.registerLocalization({
       context: this,
-      localesPath:
-        new URL("./locales/ddd-steps-list-item.ar.json", import.meta.url).href +
-        "/../",
+      localesPath: new URL("./locales/", import.meta.url).href, 
       locales: ["ar", "es", "hi", "zh"],
     });
   }
@@ -71,8 +69,7 @@ export class DddStepsListItems extends DDDSuper(I18NMixin(LitElement)) {
   <slot></slot>
 </div>`;
   }
-
  
 }
 
-globalThis.customElements.define(DddStepsListItems.tag, DddStepsListItems);
+globalThis.customElements.define(DddStepsListItem.tag, DddStepsListItem);
