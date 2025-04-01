@@ -24,7 +24,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
     this.t = this.t || {};
     this.t = {
       ...this.t,
-      title: "Title",
+      title: "Take the next step to learn Web Development. Find out more about HTML, JavaScript, CSS, and more information to get you ready to become a Web Developer.",
     };
     this.registerLocalization({
       context: this,
@@ -60,6 +60,30 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
       }
+
+      .circle {
+  width: 75px;
+  height: 75px
+  line-height: 75px;
+  border-radius: 50%; /* the magic */
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 64px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 40px;
+}
+
+.coalyGray {
+  background-color: var(--ddd-theme-default-coalyGray);  
+}
+
+
+
+
+
     `];
   }
 
@@ -86,7 +110,6 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
     );
     stepCount.forEach((item, index) => {
         item.setAttribute("step", index + 1);
-        console.log(`Step: ${item}: ${index + 1}`); //test to ensure the steps are ordered
       });
   }
 
@@ -95,7 +118,8 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  <h5><span>${this.t.title}</span> ${this.title}</h5>
+  <div class="circle coalyGray">1</div>
   <slot></slot>
 </div>`;
   }
