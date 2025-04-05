@@ -74,6 +74,8 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
   text-transform: uppercase;
   font-weight: 700;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .coalyGray {
@@ -84,6 +86,7 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
   display: flex;
   align-items: center;
   gap: 12px;
+  height: 100px;
 }
 
 h3{
@@ -91,8 +94,20 @@ h3{
   font-size: 24px;
 }
 
+.dashLineContainer {
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  height: 150%;
+  width: 2px;
+  z-index: -1;
+  background: repeating-linear-gradient(transparent 0%, transparent 10px, white 10px, white 12px);
+}
 
-
+.dashLineWrapper {
+  position: relative;
+  width: 100%; 
+}
 
     `];
   }
@@ -101,11 +116,14 @@ h3{
   render() {
     return html`
 <div class="wrapper">
-  <div class="circleContainer"> 
-  <div class="circle coalyGray">${this.step}</div>
+<div class="dashLineWrapper">
+  <div class="dashLineContainer"></div>
+  <div class="circleContainer">
+    <div class="circle coalyGray">${this.step}</div>
   <h3><span>${this.t.title}:</span> ${this.title}</h3>
   </div>
   <slot></slot>
+  </div>
 </div>`;
   }
  
