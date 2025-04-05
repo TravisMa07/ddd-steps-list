@@ -62,17 +62,17 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
 
 
       .circle {
-  width: 64px;
-  height: 64px;
-  line-height: 64px;
+  width: var(--ddd-spacing-16);
+  height: var(--ddd-spacing-16);
+  line-height: var(--ddd-spacing-16);
   border-radius: 50%; /* the magic */
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   text-align: center;
-  color: white;
-  font-size: 32px;
+  color: var(--ddd-theme-default-white);
+  font-size: var(--ddd-spacing-8);
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: var(--ddd-font-weight-bold);
   align-items: center;
   position: relative;
   z-index: 1;
@@ -85,19 +85,19 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
 .circleContainer{
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--ddd-spacing3);
   height: 100px;
 }
 
 h3{
-  margin: 0;
-  font-size: 24px;
+  margin: var(--ddd-spacing-0);
+  font-size: var(--ddd-font-size-3xs);
 }
 
 .dashLineContainer {
   position: absolute;
-  top: 25%;
-  left: 3%;
+  top: var(--ddd-spacing-13);
+  left: calc(var(--ddd-spacing-16) / 2);
   height: 150%;
   width: 2px;
   z-index: -1;
@@ -108,6 +108,13 @@ h3{
   position: relative;
   width: 100%; 
 }
+.content{
+  padding-left: var(--ddd-spacing-16);
+}
+.wrapper{
+  position: relative;
+}
+
 
     `];
   }
@@ -122,7 +129,9 @@ h3{
     <div class="circle coalyGray">${this.step}</div>
   <h3><span>${this.t.title}:</span> ${this.title}</h3>
   </div>
+  <div class="content">
   <slot></slot>
+  </div>
   </div>
 </div>`;
   }

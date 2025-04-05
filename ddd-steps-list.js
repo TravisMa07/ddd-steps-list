@@ -60,6 +60,9 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
       }
+      .title{
+        padding: 64px;
+      }
     `];
   }
 
