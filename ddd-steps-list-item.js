@@ -116,6 +116,15 @@ h3{
 }
 
 
+:host([data-primary="7"]) .dashLineContainer {
+  background-color: var(--ddd-theme-default-nittanyNavy);
+}
+:host([data-primary="7"]) .circle {
+  background-color: var(--ddd-theme-default-nittanyNavy);
+}
+
+
+
     `];
   }
 

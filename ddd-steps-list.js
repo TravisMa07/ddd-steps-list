@@ -60,17 +60,18 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
       }
-      .title{
-        padding: 64px;
+
+      :host([data-accent]) .wrapper {
+        background-color: var(--ddd-primary-accent, var(--ddd-theme-accent));
       }
     `];
   }
-
-
+  
   connectedCallback() {
     super.connectedCallback();
     this.ValidateChildren();
     this.orderSteps();
+    this.changePrimaryColor();
   }
 
   ValidateChildren(){
@@ -90,6 +91,15 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
     stepCount.forEach((item, index) => {
         item.setAttribute("step", index + 1);
       });
+  }
+
+  changePrimaryColor(){
+    const primaryColor = this.getAttribute("ddd-primary");
+    if (primaryColor){
+      this.querySelectorAll("ddd-steps-list-item").forEach((item) => {
+        item.setAttribute("data-primary", primaryColor);
+    });
+  }
   }
 
 
