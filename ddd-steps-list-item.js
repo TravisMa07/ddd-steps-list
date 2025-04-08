@@ -76,10 +76,7 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
   align-items: center;
   position: relative;
   z-index: 1;
-}
-
-.coalyGray {
-  background-color: var(--ddd-theme-default-coalyGray);  
+  margin-right: var(--ddd-spacing-4);
 }
 
 .circleContainer{
@@ -123,8 +120,6 @@ h3{
   background-color: var(--ddd-theme-default-nittanyNavy);
 }
 
-
-
     `];
   }
 
@@ -135,7 +130,7 @@ h3{
 <div class="dashLineWrapper">
   <div class="dashLineContainer"></div>
   <div class="circleContainer">
-    <div class="circle coalyGray">${this.step}</div>
+    <div class="circle">${this.step}</div>
   <h3><span>${this.t.title}:</span> ${this.title}</h3>
   </div>
   <div class="content">

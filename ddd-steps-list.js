@@ -61,6 +61,8 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
         font-size: var(--ddd-steps-list-label-font-size, var(--ddd-font-size-s));
       }
 
+      
+
       :host([data-accent]) .wrapper {
         background-color: var(--ddd-primary-accent, var(--ddd-theme-accent));
       }
