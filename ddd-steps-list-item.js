@@ -48,7 +48,7 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
+        color: var(--ddd-theme-default-coalyGray);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
@@ -69,7 +69,7 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   text-align: center;
-  color: var(--ddd-theme-default-white);
+  color:var(--ddd-theme-default-white);
   font-size: var(--ddd-spacing-8);
   text-transform: uppercase;
   font-weight: var(--ddd-font-weight-bold);
@@ -88,7 +88,8 @@ export class DddStepsListItem extends DDDSuper(I18NMixin(LitElement)) {
 
 h3{
   margin: var(--ddd-spacing-0);
-  font-size: var(--ddd-font-size-3xs);
+  font-size: var(--ddd-font-size-xs);
+  color: var(--ddd-theme-default-nittanyNavy);
 }
 
 .dashLineContainer {
@@ -112,6 +113,12 @@ h3{
   position: relative;
 }
 
+@media (max-width: 800px){
+  .wrapper{
+    padding: var(--ddd-spacing-2);
+    margin: var(--ddd-spacing-1);
+  }
+}
 
 :host([data-primary="7"]) .dashLineContainer {
   background-color: var(--ddd-theme-default-nittanyNavy);
@@ -119,6 +126,8 @@ h3{
 :host([data-primary="7"]) .circle {
   background-color: var(--ddd-theme-default-nittanyNavy);
 }
+
+
 
     `];
   }
@@ -131,7 +140,7 @@ h3{
   <div class="dashLineContainer"></div>
   <div class="circleContainer">
     <div class="circle">${this.step}</div>
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  <h3>${this.title}</h3>
   </div>
   <div class="content">
   <slot></slot>

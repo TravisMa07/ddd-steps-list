@@ -24,7 +24,7 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
     this.t = this.t || {};
     this.t = {
       ...this.t,
-      title: "Take the next step to learn Web Development. Find out more about HTML, JavaScript, CSS, and more information to get you ready to become a Web Developer.",
+      title: "Take the next steps toward a future at Penn State Altoona. Find admission requirements, tuition, and financial aid, and other information to get you ready to apply.",
     };
     this.registerLocalization({
       context: this,
@@ -65,6 +65,13 @@ export class DddStepsList extends DDDSuper(I18NMixin(LitElement)) {
 
       :host([data-accent]) .wrapper {
         background-color: var(--ddd-primary-accent, var(--ddd-theme-accent));
+      }
+
+      @media (max-width: 800px){
+        .wrapper{
+          padding: var(--ddd-spacing-2);
+          margin: var(--ddd-spacing-1);
+         }
       }
     `];
   }
